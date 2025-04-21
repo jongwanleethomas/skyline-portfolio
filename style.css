@@ -1,0 +1,136 @@
+/* Google Font Import / Basic Styles / Header / Grid / Card / Footer / Modal Styles */
+/* ... (이전 CSS 코드 전체 - 변경 없음) ... */
+body {
+  background-image: repeating-linear-gradient(
+    to right, 
+    #b71c1c, #b71c1c 30px, 
+    #ffffff 30px, #ffffff 60px, 
+    #0d47a1 60px, #0d47a1 90px
+  );
+  font-family: 'Times New Roman', Times, serif; 
+  margin: 0; 
+}
+
+header {
+  background-color: #0d47a1; 
+  color: white; 
+  padding: 15px 20px; 
+  text-align: center; 
+}
+
+h1 {
+  color: white; 
+  text-align: center; 
+  margin: 0; 
+  font-size: 1.8em; /* 기본 h1 크기 (필요시 조절) */
+}
+
+#portfolio-grid {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 25px; 
+  padding: 25px; 
+}
+
+#portfolio-grid > div { 
+  background-color: white; 
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+  padding: 20px; 
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out; 
+}
+
+#portfolio-grid > div:hover {
+    transform: translateY(-5px); 
+    border-color: #b71c1c; 
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15); 
+}
+
+#portfolio-grid img {
+  max-width: 100%; 
+  height: auto; 
+  display: block; 
+  margin-bottom: 15px; 
+  border-radius: 4px; 
+  cursor: pointer; 
+}
+
+#portfolio-grid h2 {
+  margin-top: 0; 
+  margin-bottom: 10px; 
+  font-size: 1.4em; /* 기본 h2 크기 */
+  color: #1565c0; 
+}
+
+#portfolio-grid p {
+  font-size: 0.95em; 
+  line-height: 1.5; 
+  color: #333; 
+}
+
+footer {
+  background-color: #333; 
+  color: #fff; 
+  text-align: center; 
+  padding: 20px; 
+  margin-top: 30px; 
+}
+
+footer p {
+  margin: 0; 
+  font-size: 1em; 
+}
+
+/* Modal Styles */
+/* ... (모달 관련 CSS는 이전과 동일) ... */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.8); padding-top: 60px; box-sizing: border-box; }
+.modal-content { margin: auto; display: block; max-width: 80%; max-height: 80vh; }
+#modal-caption { margin: auto; display: block; width: 80%; max-width: 700px; text-align: center; color: #ccc; padding: 10px 0; height: 150px; }
+.modal-close-btn { position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; transition: 0.3s; }
+.modal-close-btn:hover, .modal-close-btn:focus { color: #bbb; text-decoration: none; cursor: pointer; }
+.modal-active { display: block; }
+.modal-content, #modal-caption { animation-name: zoom; animation-duration: 0.4s; }
+@keyframes zoom { from {transform:scale(0)} to {transform:scale(1)} }
+
+
+/* ▼▼▼ 반응형 스타일 추가 (CSS 파일 맨 아래) ▼▼▼ */
+
+@media (max-width: 600px) { /* 화면 너비가 600px 이하일 때 적용 */
+  
+  h1 {
+    font-size: 1.5em; /* 메인 제목 크기 약간 줄임 */
+  }
+
+  #portfolio-grid {
+    gap: 15px; /* 카드 사이 간격 줄임 */
+    padding: 15px; /* 그리드 전체 여백 줄임 */
+  }
+
+  #portfolio-grid > div {
+    padding: 15px; /* 카드 내부 여백 줄임 */
+  }
+
+  #portfolio-grid h2 {
+    font-size: 1.2em; /* 카드 제목 크기 약간 줄임 */
+  }
+
+  #portfolio-grid p {
+    font-size: 0.9em; /* 카드 내용 글자 크기 약간 줄임 */
+  }
+
+  header, footer {
+      padding: 10px 15px; /* 헤더/푸터 여백 줄임 */
+  }
+
+  footer p {
+      font-size: 0.9em; /* 푸터 글자 크기 약간 줄임 */
+  }
+
+  /* 모달 안의 이미지 최대 크기 조정 (선택사항) */
+  .modal-content {
+      max-width: 90%; 
+  }
+}
+
+ 
